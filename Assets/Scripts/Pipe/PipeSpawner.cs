@@ -24,7 +24,7 @@ namespace Scripts.Pipe
         [SerializeField] public GameObject redPipe;
         [SerializeField] public GameObject greenPipe;
 
-        [HideInInspector] public PipeManager pipeManager;
+        public PipeManager pipeManager;
 
         [SerializeField] private Transform _spawnPoint;
 
@@ -34,12 +34,6 @@ namespace Scripts.Pipe
 
         private PipePositioner _pipePositioner = new PipePositioner();
         private PipeColorPicker _pipeColorPicker = new PipeColorPicker();
-
-
-        private void Start()
-        {
-            pipeManager = (PipeManager)UnityEditor.AssetDatabase.LoadAssetAtPath("Assets/Resources/Pipe/PipeProperties.asset", typeof(PipeManager));
-        }
 
         private IEnumerator SpawnPipe()
         {

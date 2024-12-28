@@ -23,13 +23,12 @@ namespace Scripts.UI
         [SerializeField] private TMP_Text _bestScoreText;
         [SerializeField] private GameObject _goldMedal; 
         [SerializeField] private GameObject _ironMedal; 
+        [SerializeField] private BestScore _bestScore;
 
-        private BestScore _bestScore;
 
         private void OnEnable()
         {
             FindObjectOfType<GamePanel>().gameObject.SetActive(false);
-            _bestScore = (BestScore)UnityEditor.AssetDatabase.LoadAssetAtPath("Assets/Resources/Score/BestScore.asset", typeof(BestScore));
 
             _bestScore.LoadData();
             SetScoreAndMedal();
